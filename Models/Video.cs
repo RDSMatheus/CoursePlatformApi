@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoursePlatform.Models
 {
-    [Table("Video")]
+    [Table("Videos")]
     public class Video
     {
         [Key]

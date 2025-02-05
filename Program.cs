@@ -8,7 +8,12 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
+
 var mySql = builder.Configuration.GetConnectionString("DefaultConnection");
+
+var password = Environment.GetEnvironmentVariable("Password");
+mySql = mySql?.Replace("__Password__", password);
+
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySql, ServerVersion.AutoDetect(mySql)));
 
 var app = builder.Build();

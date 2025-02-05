@@ -23,6 +23,5 @@ namespace CoursePlatform.Models
         public bool Lifetime { get; set; } = false;
         public bool Premium { get; set; } = false;
 
-
     }
 }

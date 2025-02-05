@@ -1,10 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoursePlatform.Models
 {
-    [Table("Module")]   
+    [Table("Modules")]   
     public class Module
                 
     {
@@ -20,5 +20,8 @@ namespace CoursePlatform.Models
         [StringLength(300)]
         public string? Description { get; set; }
         public ICollection<Video>? Videos { get; set; }
+        public int CourseId { get; set; }
+        [Required]
+        public Course? Course { get; set; }
     }
 }
